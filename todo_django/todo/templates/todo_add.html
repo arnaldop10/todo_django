@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Add todo
+{% endblock %}
+
+{% block heading %}
+    Add todo
+{% endblock %}
+
+{% block body %}
+  <form action="{% url 'todo-add' %}" method="post">
+    {% csrf_token %}
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description">
+    <input type="submit" name="submit" value="Add todo">
+  </form>
+{% endblock %}
